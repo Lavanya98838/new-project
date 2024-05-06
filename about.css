@@ -10,7 +10,9 @@
   .about p {
     margin-bottom: 20px;
   }
-  
+  body{
+    background-color: #000000;
+  }
   .container {
     width: 80%;
     margin: 0 auto;
@@ -41,37 +43,100 @@
   .image-overlay h3 {
     margin-bottom: 10px;
   }
-  header {
-    background-color: #0ec5bc;
-    color: #fff;
-    padding: 20px 0;
+  :root{
+    --main-color: #e7a809;
+    --text-color: #fff;
+    --other-color: #212121;
+    --second-color: #9e9e9e;
+    --bg-color: #111111;
+    
+    --big-font: 4.5rem;
+    --h2-font: 2.6rem;
+    --p-font: 1.1rem;
+    }
+    
+    header{
+      position: fixed;
+      width: 100%;
+      top: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      padding: 30px 14%;
+      transition:all .50s ease
   }
-  
-  header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .logo{
+      display:flex;
+      align-items: center;
+      color: var(--text-color);
+      font-size: 33px ;
   }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
+  .logo i{
+      vertical-align: middle;
+      margin-right: 8px;
+      color: var(--main-color); 
   }
+  .navlist{
+      display: flex ;
   
-  nav ul li {
-    margin-left: 20px;
   }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none; 
+  .navlist a{
+      color: var(--text-color);
+      font-size: var(--p-font);
+      font-weight: 600;
+      margin: 0 25px;
+      transition: all .50s ease;
+      
+         
   }
-  
-  footer {
-    background-color: #67defc;
-    color: #fff;
-    text-align: center;
-    margin-top: 30px;
-    padding: 10px 0;
+  .navlist a:hover{
+      color: var(--main-color)
   }
+  .navlist a:active{
+      color: var(--main-color)
+  }
+  .nav-icons{
+      display: flex;
+      align-items: center;
+      padding: 8px 15px;
+      background: var(--main-color);
+      border-radius: 3rem;
+      box-shadow: #e7a809 0px 1px 25px;
+  }
+  .nav-icons i{
+      vertical-align: middle;
+      font-size: 25px;
+      color: var(--bg-color);
+      margin-left: 5px;
+      margin-right: 8px;
+      transition: all .50s ease;
+  }
+  #menu-icon{
+      font-size: 32px;
+      color: var(--text-color);
+      z-index: 10001;
+      cursor: pointer;
+      display: none;
+  }
+  .nav-icons i:hover{
+      transform:scale(1.1) ;
+      color: var(--text-color);
   
+  }
+  .home{
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      gap: 2rem;
+  }
+  .home-img img{
+      width: 1700px;
+      height: 1080px;
+  
+  }

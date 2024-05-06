@@ -1,67 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booking</title>
-  <link rel="shortcut icon" href="819458e3-cd22-4574-bdda-36430a89c2b7.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="booking.css">
-  
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
-  <script src="booking.js"></script>
-  
-</head>
-<body background="background.jpeg">
-  <header>
-    <div class="container">
-      <h1>Booking</h1>
-      <nav>
-        <ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking</title>
+    <link
+      rel="shortcut icon"
+      href="819458e3-cd22-4574-bdda-36430a89c2b7.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="booking.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+  </head>
+  <body background="background.jpeg">
+    <header>
+      <div class="container">
+        <h1>Booking</h1>
+        <nav>
+          <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="menu.html">menu</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="location.html">hour and locations</a></li>
             <li><a href="booking.html">book a table</a></li>
             <li><a href="cart.html">Cart</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  <section class="booking">
-    <div class="container"> 
-      <h2>Make a Booking</h2>
-      <form action="" id="bookingform">
-     <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="mobile">Mobile Number:</label>
-          <input type="tel" id="mobile" name="mobile" required>
-        </div>
-        <div class="form-group">
-          <label for="people">Number of People:</label>
-          <input type="number" id="people" name="people" min="1" required>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </section>
+    <section class="booking">
+      <div class="container">
+        <h2>Make a Booking</h2>
+        <form action="" id="bookingform">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required />
+          </div>
+          <div class="form-group">
+            <label for="people">Number of People:</label>
+            <input type="number" id="people" name="people" min="1" required />
+          </div>
+          <button type="submit" onsubmit="">Submit</button>
+        </form>
+      </div>
+    </section>
 
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Restaurant Name. All rights reserved.</p>
+      </div>
+    </footer>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 Restaurant Name. All rights reserved.</p>
-    </div>
-  </footer>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBjoBUP3jBm7xqDyhrlzktHe5Ap4q9xdck",
+        authDomain: "bookingpage-e8d0f.firebaseapp.com",
+        databaseURL:
+          "https://bookingpage-e8d0f-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "bookingpage-e8d0f",
+        storageBucket: "bookingpage-e8d0f.appspot.com",
+        messagingSenderId: "282936482055",
+        appId: "1:282936482055:web:9bd51da6a4866cb2598da2",
+        measurementId: "G-SEN533S304",
+      };
 
-</body>
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+
+      // Get the form element
+      const form = document.getElementById("bookingform");
+
+      // Handle form submission
+      form.addEventListener("submit", (e) => {
+        e.preventDefault(); // Prevent default form submission
+
+        // Get form values
+        const name = form.name.value;
+        const email = form.email.value;
+        const mobile = form.mobile.value;
+        const people = parseInt(form.people.value);
+
+        // Add data to Firestore
+        db.collection("bookings")
+          .add({
+            name: name,
+            email: email,
+            mobile: mobile,
+            people: people,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          })
+          .then(() => {
+            alert("Booking submitted successfully!");
+            form.reset(); // Reset the form after submission
+          })
+          .catch((error) => {
+            console.error("Error adding booking: ", error);
+            alert("An error occurred. Please try again.");
+          });
+      });
+    </script>
+  </body>
 </html>
