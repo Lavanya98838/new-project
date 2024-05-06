@@ -1,0 +1,94 @@
+
+.booking {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+  }
+  
+  .booking h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    color: #ffffff;
+  }
+  
+  header {
+    background-color: #0ec5bc;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none; 
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    color: #ffffff; ;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    display: block;
+    width: 106%;
+    padding: 10px;
+    background-color:  #0ec5bc;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color:  #0ddbd1ad;
+    border-radius: 15px;
+  }
+  
+  footer {
+    background-color: #67defc;
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px 0;
+  }
+  

@@ -1,0 +1,227 @@
+
+:root {
+
+  /**
+   * COLORS
+   */
+
+  --gold-crayola: hsl(38, 61%, 73%);
+  --quick-silver: hsla(0, 0%, 65%, 1);
+  --davys-grey: hsla(30, 3%, 34%, 1);
+  --smoky-black-1: hsla(40, 12%, 5%, 1);
+  --smoky-black-2: hsla(30, 8%, 5%, 1);
+  --smoky-black-3: hsla(0, 3%, 7%, 1);
+  --eerie-black-1: hsla(210, 4%, 9%, 1);
+  --eerie-black-2: hsla(210, 4%, 11%, 1);
+  --eerie-black-3: hsla(180, 2%, 8%, 1);
+  --eerie-black-4: hsla(0, 0%, 13%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --white-alpha-20: hsla(0, 0%, 100%, 0.2);
+  --white-alpha-10: hsla(0, 0%, 100%, 0.1);
+  --black: hsla(0, 0%, 0%, 1);
+  --black-alpha-80: hsla(0, 0%, 0%, 0.8);
+  --black-alpha-15: hsla(0, 0%, 0%, 0.15);
+}
+body{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+    /* background-color:  var(--smoky-black-3); */
+    color: var(--gold-crayola);
+    padding: 80px 0;
+  }
+  header h1 {
+    float: left;
+  }
+  nav ul {
+    list-style: none;
+    display: block;
+  }
+  nav ul li {
+    display: inline;
+    margin-left: 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: aquamarine; 
+  }
+  .container {
+    width: 100%;
+    ;
+  }
+  .menu {
+    padding: 150px 0;
+    /* background-color: rgb(252, 255, 90); */
+    color: #000000;
+  }
+  .menu h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: x-large;
+  }
+  
+  .menu-items {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    justify-content: space-evenly;
+    column-gap: 50px;
+    row-gap: 50px;
+
+  }
+  .marq { 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+
+} 
+
+.geek1 { 
+    font-size: 64px; 
+    font-family: "Arial", sans-serif;
+    font-weight: bold; 
+    color: white; 
+    padding-bottom: 10px; 
+} 
+  
+  .item {
+    width: 300px;
+    margin: 0 20px 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.795);
+  }
+  
+  
+  
+  .item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .item h3 {
+    margin-top: 10px;
+  }
+  
+  .item p {
+    margin-top: 10px;
+  }
+  
+  .item span {
+    display: list-item;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .item:hover{
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.85em);
+    transition-duration: 0.2s;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+
+  }
+ 
+  .add-to-cart {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #b32121;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #cf0000;
+    border-radius: 10px ;
+    scroll-margin-inline-end: 10px;
+  }
+  footer {
+    background-color: #67defc;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+
+  #toastbox {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+
+  }
+  .toast {
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: moveleft 0.5s linear forwards;
+   }
+   @keyframes moveleft{
+    100%{
+      transform: translateX(0);
+    }
+   }
+  .toast::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: anim 5s linear forwards;
+   
+  }
+   @keyframes anim {
+    100%{
+      width: 0;
+    }
+   }
+   .nav-icons i:hover{
+    transform:scale(1.1) ;
+    color: var(--text-color);
+
+}
+.navlist{
+  display: flex ;
+
+}
+.navlist a{
+  color: var(--text-color);
+  font-size: var(--p-font);
+  font-weight: 600;
+  margin: 0 25px;
+  transition: all .50s ease;
+  
+     
+}
+.navlist a:hover{
+  color: var(--main-color)
+}
+.navlist a:active{
+  color: var(--main-color)
+}
+
+.nav-icons i{
+  vertical-align: middle;
+  font-size: 25px;
+  color: var(--bg-color);
+  margin-left: 5px;
+  margin-right: 8px;
+  transition: all .50s ease;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="shortcut icon" href="819458e3-cd22-4574-bdda-36430a89c2b7.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body background="pexels-kyla-rose-rockola-954677.jpg">
+  <header>
+    <div class="container">
+      <h1>Shopping Cart</h1>
+      <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="location.html">hours and location</a></li>
+            <li><a href="booking.html">booking</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="cart">
+    <div class="container">
+      <h2>Your Cart</h2>
+      <div class="cart-items" id="cart-items">
+      </div>
+      <input type="button" value="clear list" onclick="removeAll()">
+      <div class="cart-total">
+        <h3>Total:</h3>
+        <span id="cart-total">$0</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Restaurant Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grill Web Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+  <link rel="shortcut icon" href="819458e3-cd22-4574-bdda-36430a89c2b7.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body background="try-1.jpg">
+  <header>
+    <a href="#" class="logo"><i class='bx bxs-home'></i>Grill</a>
+    <ul class="navlist">
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="menu.html">MENU</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="location.html">HOURS & LOCATION</a></li>
+        <li><a href="booking.html">RESERVATION</a></li>
+    </ul>
+    <div class="nav-icons">
+        <a href="#"><i class='bx bxs-cart bx-tada' ></i></a>
+    </div>
+    <div class="bx bx-menu" id="menu-icon"></div>
+</header>
+
+<!-- <marquee class="marq" bgcolor ="#67defc" 
+direction="left" loop="infinite"> 
+<div class="geek1"> 
+taste food experience  fun foodie love-for-food
+</div> 
+</marquee> -->
+
+<div id="toastbox"></div>
+
+  <section class="menu">
+    <div class="container">
+      <h2>Menu</h2>
+      <div class="menu-items">
+        <div class="item">
+          <img src="pexels-suzy-hazelwood-1209029.jpg" alt="Dish 1">
+          <h3>sandwich</h3>
+          <p>vegies between 2 bread+ cheese if you need(chargable)
+          </p>
+          <p>Rs 59</p>
+          <button class="add-to-cart" data-name="sandwich" data-price="59" onclick="showtoast()">Add to Cart</button>
+        </div>
+        <div class="item">
+          <img src="pexels-valeria-boltneva-1639557.jpg" alt="Dish 2">
+          <h3>burger</h3>
+          <p>again an aloo patty between 2 breads</p>
+          <p>Rs 49</p>
+          <button class="add-to-cart" data-name="burger" data-price="49" onclick="showtoast()">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="french-fries.jpg" alt="Dish 2">
+            <h3>french fries</h3>
+            <p>classic salted potato gently sliced and fried </p>
+            <p>Rs 99</p>
+            <button class="add-to-cart" data-name="french fries" data-price="99" onclick="showtoast()">Add to Cart</button>
+            </div>
+            <div class="item">
+                <img src="pexels-engin-akyurt-1437267.jpg" alt="Dish 2">
+                <h3>pasta </h3>
+                <p>classic red sause pasta
+                    tossed with garlic,chilli flakes </p>
+                <p>Rs 149</p>
+                <button class="add-to-cart" data-name="pasta " data-price="149" onclick="showtoast()">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="pexels-jane-trang-doan-769969.jpg" alt="Dish 2">
+                    <h3>spaghetti</h3>
+                    <p>noodles tossed with white sause and cheese </p>
+                    <p>Rs 199 </p>
+                    <button class="add-to-cart" data-name="spaghetti" data-price="199" onclick="showtoast()">Add to Cart</button>
+                    </div>
+                    <div class="item">
+                        <img src="pexels-amar-preciado-17653573.jpg" alt="Dish 2">
+                        <h3>choclate pastry</h3>
+                        <p>...</p>
+                        <p>Rs 99</p>
+                        <button class="add-to-cart" data-name="choclate pastry" data-price="99" onclick="showtoast()">Add to Cart</button>
+                        </div>
+                        <div class="item">
+                            <img src="pexels-eneida-nieves-905847.jpg" alt="Dish 2">
+                            <h3>pizza</h3>
+                            <p>hand tossed with pizza toppings with cheese</p>
+                            <p>Rs 129</p>
+                            <button class="add-to-cart" data-name="pizza" data-price="129" onclick="showtoast()">Add to Cart</button>
+                            </div>
+                            <div class="item">
+                                <img src="pexels-marvin-ozz-2474661.jpg" alt="Dish 2">
+                                <h3>dal makhni with nan</h3>
+                                <p>black lentils cooked over time with creamy texture</p>
+                                <p>Rs 299</p>
+                                <button class="add-to-cart" data-name="dal makhni with nan" data-price="299" onclick="showtoast()">Add to Cart</button>
+                                </div>
+                                <div class="item">
+                                    <img src="salad.jpg" alt="Dish 2">
+                                    <h3> salad</h3>
+                                    <p>
+                                        ..... </p>
+                                    <p>Rs 49</p>
+                                    <button class="add-to-cart" data-name="salad" data-price="49" onclick="showtoast()">Add to Cart</button>
+                                    </div>
+                                    <div class="item">
+                                        <img src="pexels-archie-binamira-1193335.jpg" alt="Dish 2">
+                                        <h3>cold coffee</h3>
+                                        <p>special kerela coffee beans blended with cream </p>
+                                        <p>Rs 99</p>
+                                        <button class="add-to-cart" data-name="cold coffee" data-price="99" onclick="showtoast()">Add to Cart</button>
+                                        </div>
+                                        <div class="item">
+                                          <img src="momoes.jpg" alt="Dish 2">
+                                          <h3>momoes</h3>
+                                          <p>katti hui patta gobhi inside maida balls steamed\fried in fire </p>
+                                          <p>Rs 129</p>
+                                          <button class="add-to-cart" data-name="momoes" data-price="129" onclick="showtoast()">Add to Cart</button>
+                                          </div>
+                                          <div class="item">
+                                            <img src="alloi-ollio-ppasta.jpg" alt="Dish 2">
+                                            <h3>alloi-ollio-pasta</h3>
+                                            <p>....... </p>
+                                            <p>Rs 229</p>
+                                            <button class="add-to-cart" data-name="alloi-ollio-pasta" data-price="229" onclick="showtoast()">Add to Cart</button>
+                                            </div>        
+                
+
+        
+      </div>
+    </div>
+  </section>
+  <script>
+    let toastbox = document.getElementById('toastbox')
+   
+    function showtoast(){
+      let toast = document.createElement('div');
+      toast.classList.add('toast');
+      toast.innerHTML='Added to the cart';
+      toastbox.appendChild(toast) ;
+     
+      setTimeout(()=>{
+        toast.remove();
+      },6000 )
+
+      }
+
+    
+  </script>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Restaurant Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
